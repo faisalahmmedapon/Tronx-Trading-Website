@@ -87,7 +87,7 @@
         <div class="header__mobile-container">
             <div class="header__mobile-block">
                 <div class="header__mobile-container__nav">
-                    <a href="/faq/">FAQ</a>
+                    <a href="{{route('faq')}}">FAQ</a>
 
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +102,7 @@
                     </svg>
                 </div>
                 <div class="header__mobile-container__nav">
-                    <a href="/about-us/">About us</a>
+                    <a href="{{route('about')}}">About us</a>
 
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +116,51 @@
                         </g>
                     </svg>
                 </div>
+                @if(\Illuminate\Support\Facades\Auth::user())
+                                <div class="header__mobile-container__nav">
+                    <a href="{{route('profile')}}">
+                        {{Auth::user()->name}} </a>
+
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4">
+                            <path
+                                d="M5.71583 14.0739C5.28613 14.514 5.28613 15.2121 5.71583 15.6521C6.17537 16.1227 6.94039 16.1134 7.37562 15.6394L14.0713 8.78268C14.2808 8.56815 14.3936 8.2794 14.3936 7.99359C14.3936 7.69813 14.2824 7.42074 14.0713 7.20451L7.37563 0.347805C6.92278 -0.115936 6.16868 -0.115936 5.71583 0.347805C5.28613 0.787845 5.28613 1.48593 5.71583 1.92597L11.653 8.0059L5.71583 14.0739Z"
+                                fill="white"></path>
+                            <path
+                                d="M5.71583 14.0739C5.28613 14.514 5.28613 15.2121 5.71583 15.6521C6.17537 16.1227 6.94039 16.1134 7.37562 15.6394L14.0713 8.78268C14.2808 8.56815 14.3936 8.2794 14.3936 7.99359C14.3936 7.69813 14.2824 7.42074 14.0713 7.20451L7.37563 0.347805C6.92278 -0.115936 6.16868 -0.115936 5.71583 0.347805C5.28613 0.787845 5.28613 1.48593 5.71583 1.92597L11.653 8.0059L5.71583 14.0739Z"
+                                fill="white"></path>
+                        </g>
+                    </svg>
+                </div>
+
+
+                                <div class="header__mobile-container__nav">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        </form>
+
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4">
+                            <path
+                                d="M5.71583 14.0739C5.28613 14.514 5.28613 15.2121 5.71583 15.6521C6.17537 16.1227 6.94039 16.1134 7.37562 15.6394L14.0713 8.78268C14.2808 8.56815 14.3936 8.2794 14.3936 7.99359C14.3936 7.69813 14.2824 7.42074 14.0713 7.20451L7.37563 0.347805C6.92278 -0.115936 6.16868 -0.115936 5.71583 0.347805C5.28613 0.787845 5.28613 1.48593 5.71583 1.92597L11.653 8.0059L5.71583 14.0739Z"
+                                fill="white"></path>
+                            <path
+                                d="M5.71583 14.0739C5.28613 14.514 5.28613 15.2121 5.71583 15.6521C6.17537 16.1227 6.94039 16.1134 7.37562 15.6394L14.0713 8.78268C14.2808 8.56815 14.3936 8.2794 14.3936 7.99359C14.3936 7.69813 14.2824 7.42074 14.0713 7.20451L7.37563 0.347805C6.92278 -0.115936 6.16868 -0.115936 5.71583 0.347805C5.28613 0.787845 5.28613 1.48593 5.71583 1.92597L11.653 8.0059L5.71583 14.0739Z"
+                                fill="white"></path>
+                        </g>
+                    </svg>
+                </div>
+
+                @endif
+
             </div>
 
             <div class="header__mobile-container__footer">

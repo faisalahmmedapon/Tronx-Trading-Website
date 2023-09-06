@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
         $one_user->assignRole('user');
 
 
-        $doctors = array(
+        $users = array(
             ['name' => 'Thomas Henry',
                 'email' => 'thomashenry@gmail.com',
                 'password' => Hash::make('12345678'),
@@ -64,9 +64,9 @@ class UserSeeder extends Seeder
 //                'email_verified_at' => now(),
             ],
         );
-        foreach ($doctors as $doctor) {
-           $doctor =  User::updateOrCreate($doctor);
-            $doctor->assignRole('Doctor');
+        foreach ($users as $user) {
+            $user =  User::updateOrCreate($user);
+            $user->assignRole('user');
         }
 
     }

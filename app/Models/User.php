@@ -45,14 +45,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-
-    public function doctor(){
-        return $this->hasOne(Doctor::class,'user_id','id');
-    }
-
-
-    public function chats(){
-        return $this->hasMany(Chat::class,'receive_user_id','id');
-    }
-
 }
