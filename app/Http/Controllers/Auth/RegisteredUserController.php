@@ -13,45 +13,45 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Stevebauman\Location\Facades\Location;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
-    public function create(): View
+
+    public function create(Request $request)
     {
-        //return view('auth.register');
+
+         $ip = $request->ip();
+//        $ip = '162.159.24.227';
+        $currentUserInfo = Location::get($ip);
         $countries = Country::all();
-        return view('frontend.sign-up',compact('countries'));
+        return view('frontend.sign-up',compact('countries','currentUserInfo'));
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        dd($request->all());
-
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'phone_code' => ['required', 'numeric'],
+            'phone' => ['required', 'numeric'],
+            'currency' => ['required', 'string'],
+            'rules' => ['required', 'numeric'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone_code' => $request->phone_code,
+            'phone' => $request->phone,
+            'currency' => $request->currency,
+            'rules' => $request->rules,
             'password' => Hash::make($request->password),
         ]);
-        $user->assignRole('user');
-
         event(new Registered($user));
-
+        $user->assignRole('user');
         Auth::login($user);
-
         return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -2,7 +2,15 @@
 
 
 @push('style')
-
+<style>
+    .modal-sign__input.select.country {
+        width: 142px;
+    }
+    .text-danger {
+        color: red;
+        padding: 5px 2px;
+    }
+</style>
 @endpush
 @section('meta_title', 'Sign-up')
 @section('meta_keywords', '')
@@ -26,50 +34,63 @@
                 </div>
 
                 <div id="tab-2" class="tabs__item active">
-                    <form action="{{route('register')}}" method="post"
-                          onsubmit="this.elements['time_offset'].value = -new Date().getTimezoneOffset() * 60; return QXvId.submit(this, '__alreadySubmited'); "
-                          dir="auto">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="modal-sign__input">
                             <label class="modal-sign__input-label ">Name</label>
                             <input type="text" name="name" class="modal-sign__input-value focus-tooltip" required=""
-                                   autocomplete="off" placeholder="Name">
+                                   autocomplete="" placeholder="Name">
+                            @if($errors->has('name'))
+                                <div class="text-danger">{{ $errors->first('name') }}</div>
+                            @endif
                         </div>
                         <div class="modal-sign__input">
                             <label class="modal-sign__input-label ">Email</label>
                             <input type="email" name="email" class="modal-sign__input-value focus-tooltip" required=""
-                                   autocomplete="off" placeholder="Email">
+                                   autocomplete="" placeholder="Email">
+                            @if($errors->has('email'))
+                                <div class="text-danger">{{ $errors->first('email') }}</div>
+                            @endif
                         </div>
                         <div class="modal-sign__input">
                             <div class="d-flex justify-content-between">
-                                <div class="modal-sign__input select">
-                                    <label class="modal-sign__input-label ">Select Country Code</label>
+                                <div class="modal-sign__input select country">
+                                    <label class="modal-sign__input-label ">Phone</label>
                                     <div class="modal-sign__input-select form__select select__wrapper ">
-                                        <select name="phonecode" class="select__element">
+                                        <select name="phone_code" class="select__element">
                                             @foreach($countries as $country)
-                                                <option value="{{$country->phonecode}}">+{{$country->phonecode}}</option>
+                                                <option  @if($currentUserInfo->countryCode == $country->code) selected @endif
+                                                value="{{$country->phonecode}}">+{{$country->phonecode}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="modal-sign__input-label ">Phone</label>
                                     <input type="tel" name="phone" class="modal-sign__input-value focus-tooltip"
                                            required=""
-                                           autocomplete="off" placeholder="phone">
+                                           autocomplete="" placeholder="phone">
                                 </div>
+                                @if($errors->has('phone_code') && $errors->has('phone'))
+                                    <div class="text-danger">{{ $errors->first('phone_code') }} {{ $errors->first('phone') }}</div>
+                                @endif
                             </div>
                         </div>
                         <div class="modal-sign__input">
                             <label class="modal-sign__input-label">Password</label>
                             <input type="password" name="password" value="" class="modal-sign__input-value" required=""
-                                   autocomplete="off" placeholder="Password">
+                                   autocomplete="" placeholder="Password">
+                            @if($errors->has('password'))
+                                <div class="text-danger">{{ $errors->first('password') }}</div>
+                            @endif
                         </div>
                         <div class="modal-sign__input">
                             <label class="modal-sign__input-label " for="password_confirmation">Password</label>
                             <input id="password_confirmation" type="password" name="password_confirmation" value=""
                                    class="modal-sign__input-value" required=""
-                                   autocomplete="off" placeholder="confirm password">
+                                   autocomplete="" placeholder="confirm password">
+                            @if($errors->has('password_confirmation'))
+                                <div class="text-danger">{{ $errors->first('password_confirmation') }}</div>
+                            @endif
                         </div>
 
                         <div class="modal-sign__input select">
@@ -96,7 +117,9 @@
                                     <option value="JPY">JPY</option>
                                     <option value="BDT">BDT</option>
                                 </select>
-
+                                @if($errors->has('currency'))
+                                    <div class="text-danger">{{ $errors->first('currency') }}</div>
+                                @endif
                             </div>
                         </div>
 
@@ -112,6 +135,9 @@
                                             Agreement</a></div>
                                 </label>
                             </div>
+                            @if($errors->has('rules'))
+                                <div class="text-danger">{{ $errors->first('rules') }}</div>
+                            @endif
                         </div>
 
 

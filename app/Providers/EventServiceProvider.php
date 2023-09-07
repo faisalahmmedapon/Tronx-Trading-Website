@@ -21,10 +21,6 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        PatientRegistered::class => [
-            SendPatientMail::class,
-            SendAdminMail::class
-        ]
     ];
 
     /**
