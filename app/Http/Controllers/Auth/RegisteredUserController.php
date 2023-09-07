@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -21,7 +22,8 @@ class RegisteredUserController extends Controller
     public function create(): View
     {
         //return view('auth.register');
-        return view('frontend.sign-up');
+        $countries = Country::all();
+        return view('frontend.sign-up',compact('countries'));
     }
 
     /**
@@ -31,6 +33,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        dd($request->all());
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],

@@ -48,7 +48,7 @@
                                 <i class="fa-brands fa-facebook"></i>
                             </a>
                             <a href="" class="modal-sign__social-button google">
-                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-google"></i>
                             </a>
                         </div>
                     </div>

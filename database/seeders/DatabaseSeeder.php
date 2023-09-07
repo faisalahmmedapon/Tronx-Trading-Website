@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SettingSeeder::class,
             PaymentSeeder::class,
+            CountrySeeder::class,
         ]);
 
     }
