@@ -8,7 +8,6 @@
 @section('content')
 
 
-
         <div class="main__platform">
             <div class="main__platform-block">
                 <img class="main__platform-block-image" src="{{asset('frontend')}}/images/platform.png" alt="about-us"

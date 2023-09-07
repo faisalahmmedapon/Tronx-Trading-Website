@@ -40,15 +40,13 @@ if (!function_exists('user_redirect_by_role')) {
 
             if (Auth::user()->status == 'inactive'){
                 Auth::guard('web')->logout();
-
                 $notification = array(
                     'message' => 'We are sorry to inform you that your account is suspend,Please contact with customer care!',
                     'alert-type' => 'warning'
                 );
-
                 return redirect('/')->with($notification);
             }else{
-                return redirect('/');
+                return view('frontend.auth.index');
             }
         }
     }

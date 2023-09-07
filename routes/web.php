@@ -1,5 +1,5 @@
 <?php
-
+//->middleware('verified')
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\FaqController;
