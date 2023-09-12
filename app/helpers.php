@@ -46,7 +46,7 @@ if (!function_exists('user_redirect_by_role')) {
                 );
                 return redirect('/')->with($notification);
             }else{
-                return view('frontend.auth.index');
+                return redirect()->route('user.dashboard');
             }
         }
     }

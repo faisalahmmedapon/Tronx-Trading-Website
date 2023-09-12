@@ -1,0 +1,132 @@
+body {
+    background-color: #1f2630;
+    color: #fff;
+}
+.header-icon {
+    padding: 5px 0px;
+}
+
+.header-icon i {
+    color: #707a89;
+    font-size: 25px;
+}
+
+.header-icon-search {
+    background-color: #29313c !important;
+    color: #707a89;
+    border-radius: 20px;
+    border-color: 2px solid #29313c !important;
+    text-align: center;
+    border: 1px solid #555;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+.header-icon i:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #a7adba;
+    transition: all 0.5s ease;
+}
+
+.content {
+    padding: 42px 10px;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.footer {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-icon {
+    padding: 5px;
+}
+
+.footer-a-style {
+    display: grid;
+    color: #707a89;
+    text-decoration: #707a89;
+    padding: 2px;
+    text-align: center;
+}
+.footer-icon i {
+    color: #707a89;
+    /* font-size: 25px; */
+}
+.footer-a-style:hover {
+    color: #707a89;
+}
+
+.footer-active {
+    color: #fcd434 !important;
+}
+
+
+.banner{
+    padding: 5px 0px 0px 0px;
+}
+
+.banner-image img{
+    width: 100px;
+}
+
+.banner-text {
+    padding: 22px 0px 0px 0px;
+}
+.banner-text h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.trade-banner a{
+    width: 100%;
+    background-color: #fcd434 !important;
+    border: 2px solid #fcd434;
+    margin-top: 11px;
+}
+
+.bottom-list-a-style{
+    display: grid;
+    text-decoration: #707a89;
+    padding: 2px;
+    text-align: center;
+    width: 50px;
+}
+
+.bottom-list-a-style i{
+    width: 50px;
+    height: 50px;
+    background-color: #28303b;
+    color: #fcd434;
+    border-radius: 50%;
+    padding: 16px;
+}
+
+.bottom-list a{
+    color: #ffffff;
+}
+
+.bottom-list {
+    padding: 10px 0px;
+}
+.p2p-trading-img img {
+    width: 73px;
+}
+
+.p2p-trading {
+    background-color: #2e3440;
+    padding: 18px 5px;
+    border-radius: 14px;
+}
+.p2p-trading-text p {
+    opacity: .5;
+}

@@ -10,6 +10,10 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\Dashboard\Futures\FutureController;
+use App\Http\Controllers\User\Dashboard\Markets\MarketController;
+use App\Http\Controllers\User\Dashboard\Trades\TradeController;
+use App\Http\Controllers\User\Dashboard\Wallets\WalletController;
 use App\Http\Controllers\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -73,7 +77,19 @@ Route::middleware('auth')->group(function () {
                 ->name('logout');
 });
 
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/user/dashboard', [UserDashboard::class, 'index'])->name('user.dashboard');
+    Route::get('/markets', [MarketController::class, 'index'])->name('markets');
+    Route::get('/trades', [TradeController::class, 'index'])->name('trades');
+    Route::get('/futures', [FutureController::class, 'index'])->name('futures');
+    Route::get('/wallets', [WalletController::class, 'index'])->name('wallets');
 
 
-Route::get('/user/dashboard',[UserDashboard::class,'index'])->middleware(['auth','verified']);
+    // if you want to add all in one controller
+//    Route::controller(OrderController::class)->group(function () {
+//        Route::get('/orders/{id}', 'show');
+//        Route::post('/orders', 'store');
+//    });
+
+});
 
