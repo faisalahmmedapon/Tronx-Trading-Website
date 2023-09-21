@@ -41,39 +41,51 @@
         </div>
         <div class="bottom-list">
             <div class="bottom-list d-flex justify-content-between">
-                <a class="bottom-list-a-style" href="#">
-                    <i class="fa-solid fa-house"></i>
+                {{-- <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/13.jpeg') }}" alt="" srcset="">
                     Home
-                </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-chart-simple"></i>
+                </a> --}}
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/7.jpeg') }}" alt="" srcset="">
                     Deposit
                 </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-masks-theater"></i>
-                    Earn
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/4.jpeg') }}" alt="" srcset="">
+                     Trading Bot
                 </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-stroopwafel"></i>
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/9.jpeg') }}" alt="" srcset="">
                     Referral
                 </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-stroopwafel"></i>
-                    Referral
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/10.jpeg') }}" alt="" srcset="">
+                    Cash Gift
+                </a>
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/11.jpeg') }}" alt="" srcset="">
+                    Rewards Hub
                 </a>
             </div>
             <div class="bottom-list d-flex justify-content-between">
+
                 <a class="bottom-list-a-style" href="#">
-                    <i class="fa-solid fa-house"></i>
-                    About
+                    <img src="{{ asset('frontend/auth/images/1.jpeg') }}" alt="" srcset="">
+                    P2P
                 </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-chart-simple"></i>
-                    Deposit
-                </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-masks-theater"></i>
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/2.jpeg') }}" alt="" srcset="">
                     Earn
                 </a>
-                <a class="bottom-list-a-style" href="#"> <i class="fa-solid fa-stroopwafel"></i>
-                    Referral
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/12.jpeg') }}" alt="" srcset="">
+                    Crypto Lerding
                 </a>
                 <a class="bottom-list-a-style" href="#">
-                    <i class="fa-solid fa-wallet"></i>
+                    <img src="{{ asset('frontend/auth/images/3.jpeg') }}" alt="" srcset="">
+                    Margin Trading
+                </a>
+                <a class="bottom-list-a-style" href="#">
+                    <img src="{{ asset('frontend/auth/images/13.jpeg') }}" alt="" srcset="">
                     More
                 </a>
             </div>

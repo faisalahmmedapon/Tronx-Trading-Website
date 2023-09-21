@@ -3,7 +3,7 @@ body {
     color: #fff;
 }
 .header-icon {
-    padding: 5px 0px;
+    padding: 9px 0px;
 }
 
 .header-icon i {
@@ -19,6 +19,7 @@ body {
     text-align: center;
     border: 1px solid #555;
     background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+    width: 150px;
 }
 
 .header-icon i:hover {
@@ -94,12 +95,16 @@ body {
     margin-top: 11px;
 }
 
+.bottom-list{
+    align-items: center;
+}
+
 .bottom-list-a-style{
     display: grid;
     text-decoration: #707a89;
     padding: 2px;
     text-align: center;
-    /*width: 50px;*/
+    width: 50px;
 }
 
 .bottom-list-a-style i{
@@ -109,6 +114,16 @@ body {
     color: #fcd434;
     border-radius: 50%;
     padding: 16px;
+}
+
+.bottom-list-a-style img{
+    width: 50px;
+    height: 50px;
+    background-color: #28303b;
+    color: #fcd434;
+    border-radius: 50%;
+    /* padding: 16px; */
+    margin: auto;
 }
 
 .bottom-list a{
