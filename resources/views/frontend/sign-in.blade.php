@@ -29,12 +29,17 @@
                             <label class="modal-sign__input-label ">Email</label>
                             <input type="email" name="email" class="modal-sign__input-value focus-tooltip" required="1"
                                    autocomplete="off" placeholder="Email">
+                            @if($errors->has('email'))
+                                <div class="text-danger">{{ $errors->first('email') }}</div>
+                            @endif
                         </div>
                         <div class="modal-sign__input">
                             <label class="modal-sign__input-label ">Password</label>
                             <input type="password" name="password" value="" class="modal-sign__input-value" required="1"
                                    autocomplete="off" placeholder="Password">
-                        </div>
+                            @if($errors->has('password'))
+                                <div class="text-danger">{{ $errors->first('password') }}</div>
+                            @endif                     </div>
                         <button class="btn btn-primary modal-sign__block-button " type="submit">Sign in</button>
                     </form>
 
