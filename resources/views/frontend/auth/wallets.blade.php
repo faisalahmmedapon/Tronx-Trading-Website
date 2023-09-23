@@ -92,7 +92,12 @@
 
 
 @section('content')
+
+
     <div class="card-body">
+        <a class="nav-link nav-link-style" href="{{route('dashboard')}}">
+            <i class="fa-solid fa-circle-left text-color-style"></i>
+        </a>
         <ul class="nav" role="tablist">
             <li class="" role="presentation">
                 <a class="nav-link nav-link-style" data-bs-toggle="tab" href="#overview" role="tab" aria-selected="true">

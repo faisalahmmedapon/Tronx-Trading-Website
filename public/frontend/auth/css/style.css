@@ -125,6 +125,20 @@ body {
     /* padding: 16px; */
     margin: auto;
 }
+.bottom-list-a-style:hover{
+    background-color: #fcd434;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+
+}
+
+
+.text-color-style{
+    color: #fcd434;
+}
+
+
 
 .bottom-list a{
     color: #ffffff;
